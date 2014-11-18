@@ -1,4 +1,4 @@
 build_script: build.cmd
 test:
   assemblies:
-    - **\*.test*.dll
+    - '**\*.test*.dll'
