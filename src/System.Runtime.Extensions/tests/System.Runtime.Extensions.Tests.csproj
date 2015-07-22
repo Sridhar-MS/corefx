@@ -20,6 +20,7 @@
     <Compile Include="System\Diagnostics\Stopwatch.cs" />
     <Compile Include="System\Environment.NewLine.cs" />
     <Compile Include="System\Environment.ProcessorCount.cs" />
+    <Compile Include="System\Environment.StackTrace.cs" />
     <Compile Include="System\Runtime\Versioning\FrameworkName.cs" />
     <Compile Include="System\IO\Path.cs" />
     <Compile Include="System\IO\Path.Combine.cs" />

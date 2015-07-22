@@ -5,15 +5,14 @@ using System;
 using System.Runtime.InteropServices;
 using Xunit;
 
-namespace System.Runtime.Extensions.Tests.System
+namespace System.Runtime.Extensions.Tests
 {
     public class EnvironmentProcessorCount
     {
         [Fact]
         public void ProcessorCountTest()
         {
-            int actual = Environment.ProcessorCount;
-            Assert.True(actual > 0);
+            //arrange
             int expected;
 
             if(Interop.IsWindows)
@@ -27,7 +26,12 @@ namespace System.Runtime.Extensions.Tests.System
                 int _SC_NPROCESSORS_ONLN = Interop.IsOSX ? 58 : 84;
                 expected = (int)sysconf(_SC_NPROCESSORS_ONLN);                
             }
-            
+
+            //act
+            int actual = Environment.ProcessorCount;
+
+            //assert
+            Assert.True(actual > 0);
             Assert.Equal(expected, actual);
         }
 

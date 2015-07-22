@@ -6,24 +6,25 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace System.Runtime.Extensions.Tests.System
+namespace System.Runtime.Extensions.Tests
 {
     public class EnvironmentTickCount
     {
         [Fact]
         public void TickCountTest()
         {
+            //arrange
+            const int milliSeconds = 1000;
             int start = Environment.TickCount;
-            int milliSeconds = 1000;
+
+            //act
             Task.Delay(milliSeconds).Wait();
             int end = Environment.TickCount;
+
+            //assert
             Console.WriteLine("Start - " + start);
-            Console.WriteLine("End - " + end);            
+            Console.WriteLine("End - " + end);
             Assert.True(end - start >= milliSeconds);
         }
     }
-
-
-
-
 }

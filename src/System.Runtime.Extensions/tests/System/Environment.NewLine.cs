@@ -5,15 +5,21 @@ using System;
 using System.Runtime.InteropServices;
 using Xunit;
 
-namespace System.Runtime.Extensions.Tests.System
+namespace System.Runtime.Extensions.Tests
 {
     public class EnvironmentNewLine
     {
         [Fact]
         public void NewLineTest()
         {
+            //arrange
             string expectedNewLine = Interop.IsWindows ? "\r\n" : "\n";
-            Assert.Equal(expectedNewLine, Environment.NewLine);
+
+            //act
+            string actualNewLine = Environment.NewLine;
+
+            //assert
+            Assert.Equal(expectedNewLine, );
         }
     }
 
